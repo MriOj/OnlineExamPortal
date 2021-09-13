@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Results</title>
+<style>
+.center{
+text-align:center;
+}
+</style>
+</head>
+<body>
+<div class="center">
+<p>
+<span style="text-transform:uppercase"><b><%{out.println(request.getAttribute("fname"));}%></b>  <b><%{out.println(request.getAttribute("lname"));}%></b></span>
+Welcome 
+You've scored <b><%{out.println(request.getAttribute("marks"));} %> </b>marks in test no. = <%{out.println(request.getAttribute("test"));} %>
+</p>
+</div>
+
+</body>
+</html>

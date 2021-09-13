@@ -1,0 +1,43 @@
+<%@ page import="java.sql.*" %>
+<% Class.forName("com.mysql.cj.jdbc.Driver");; %>
+<HTML>
+       <HEAD>
+       <TITLE>Class Results </TITLE>
+       </HEAD>
+       <BODY>
+       <H1 style="text-align:center"> CLASS RESULT </H1>
+       <%
+       Connection con1 =DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/examportal","root","Ria@1234");
+           Statement statement = con1.createStatement() ;
+          ResultSet stud = statement.executeQuery("select * from student") ;
+          Connection con2 =DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/examportal","root","Ria@1234");
+          Statement s2 = con2.createStatement() ;
+          //ResultSet test1 = statement.executeQuery("select * from test1") ;
+          // ResultSet test2 = statement.executeQuery("select * from test2") ;
+          
+       %>
+      <TABLE BORDER="1" style="width:100%">
+      <TR>
+      <TH>User Id </TH>
+      <TH>FirstName</TH>
+      <TH>LastName</TH>
+      <TH>Gender</TH>
+      <TH>Phone</TH>
+      <TH>EmailId</TH>
+      <TH>Test1</TH>
+      <TH>Test2</TH>
+      
+      </TR>
+      <% while(stud.next()){ %>
+      <TR>
+       <TD> <%= stud.getInt(1) %></td>
+       <TD> <%= stud.getString(4) %></TD>
+       <TD> <%= stud.getString(6) %></TD>
+       <TD> <%= stud.getString(5) %></TD>
+       <TD> <%= stud.getInt(8) %></TD>
+       <TD> <%= stud.getString(3) %></TD>
+      </TR>
+      <% } %>
+     </TABLE>
+     </BODY>
+</HTML>

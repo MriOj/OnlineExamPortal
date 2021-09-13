@@ -1,0 +1,54 @@
+
+form {
+  border: 3px solid #f1f1f1;
+  width: 40%;
+}
+
+input[type=text], input[type=password] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.button {
+  background-color: #990011FF;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.imgcontainer {
+ 
+  display: flex;
+  align-content: center;
+}
+
+img.avatar {
+  width: 20%;
+  border-radius: 50%;
+}
+
+
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.center{
+	
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	width:100%;
+}

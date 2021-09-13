@@ -1,0 +1,45 @@
+<%@ page import="java.sql.*" %>
+<% Class.forName("com.mysql.cj.jdbc.Driver");; %>
+<HTML>
+       <HEAD>
+       <TITLE>The View Of Database Table </TITLE>
+       </HEAD>
+       <BODY>
+       <H1 style="text-align:center"> CLASS RESULT </H1>
+       <%
+       Connection con1 =DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/examportal","root","Ria@1234");
+           Statement statement = con1.createStatement() ;
+          ResultSet stud = statement.executeQuery("select * from student") ;
+          Statement s2 = con2.createStatement() ;
+          ResultSet test1 = statement.executeQuery("select * from test1") ;
+          ResultSet test2 = statement.executeQuery("select * from test2") ;   
+       %>
+      <TABLE BORDER="1">
+      <TR>
+      <TH>User Id </TH>
+      <TH>FirstName</TH>
+      <TH>LastName</TH>
+      <TH>Gender</TH>
+      <TH>Phone</TH>
+      <TH>EmailId</TH>
+      <TH>Test1</TH>
+      <TH>Test2</TH>
+      </TR>
+      <% while(stud.next()){ %>
+      <TR>
+       <TD> <%= stud.getInt(1) %></td>
+       <TD> <%= stud.getString(4) %></TD>
+       <TD> <%= stud.getString(6) %></TD>
+       <TD> <%= stud.getString(5) %></TD>
+       <TD> <%= stud.getString(5) %></TD>
+       <TD> <%= stud.getInt(8) %></TD>
+       <TD> <%= stud.getString(3) %></TD>
+       <TD> <%= test1.getInt(2) %></TD>
+       <TD> <%= test2.getInt(2) %></TD>
+      </TR>
+       <%test1.next(); %>
+       <%test2.next(); %>
+      <% } %>
+     </TABLE>
+     </BODY>
+</HTML>

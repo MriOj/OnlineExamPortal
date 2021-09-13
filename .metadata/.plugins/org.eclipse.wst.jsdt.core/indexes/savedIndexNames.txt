@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\RIA\OneDrive - RIA ADVISORY, LLC\Desktop\OnlineExamPortal\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+595440404.index
+613174029.index
+4088984061.index
+728750810.index
+548008494.index
+352328653.index

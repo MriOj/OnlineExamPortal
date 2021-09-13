@@ -1,0 +1,38 @@
+<%@ page import="java.sql.*" %>
+<% Class.forName("com.mysql.cj.jdbc.Driver");; %>
+<HTML>
+       <HEAD>
+       <TITLE>Class Results </TITLE>
+       </HEAD>
+       <BODY>
+       <H1 style="text-align:center"> CLASS RESULT </H1>
+       <%
+       Connection con1 =DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/examportal","root","Ria@1234");
+           Statement statement = con1.createStatement() ;
+          ResultSet stud = statement.executeQuery("select * from student") ;
+          
+       %>
+      <TABLE BORDER="1">
+      <TR>
+      <TH>User Id </TH>
+      <TH>FirstName</TH>
+      <TH>LastName</TH>
+      <TH>Gender</TH>
+      <TH>Phone</TH>
+      <TH>EmailId</TH>
+      
+      </TR>
+      <% while(stud.next()){ %>
+      <TR>
+       <TD> <%= stud.getInt(1) %></td>
+       <TD> <%= stud.getString(4) %></TD>
+       <TD> <%= stud.getString(6) %></TD>
+       <TD> <%= stud.getString(5) %></TD>
+       <TD> <%= stud.getString(5) %></TD>
+       <TD> <%= stud.getInt(8) %></TD>
+       <TD> <%= stud.getString(3) %></TD>
+      </TR>
+      <% } %>
+     </TABLE>
+     </BODY>
+</HTML>

@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin</title>
+<style>
+.center {
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+border: 10px solid grey; 
+padding: 50px;
+}
+</style>
+</head>
+<body>
+<div class="center">
+
+  <h1>Welcome admin !!</h1> <br>
+  <p> Please enter a student's id to check report card </p>
+  <form action="reportcard" method="post">
+  <input type="number" placeholder="Enter a student id" name="userid">
+  <input type="submit">
+  </form>
+  
+</div>
+</body>
+</html>
